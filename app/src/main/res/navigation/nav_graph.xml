@@ -1,0 +1,112 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto" android:id="@+id/nav_graph"
+    app:startDestination="@id/mainFragment">
+
+    <fragment
+        android:id="@+id/mainFragment"
+        android:name="mousquetaires.com.navigation4techday.ui.main.MainFragment"
+        android:label="MainFragment" >
+        <action
+            android:id="@+id/action_mainFragment_to_secondFragment"
+            app:destination="@id/navigation5"
+            app:enterAnim="@anim/slide_in_right"
+            app:exitAnim="@anim/slide_out_left"
+            app:popEnterAnim="@anim/slide_in_left"
+            app:popExitAnim="@anim/slide_out_right"/>
+        <action
+            android:id="@+id/action_mainFragment_to_thirdFragment"
+            app:destination="@id/thirdFragment"
+            app:enterAnim="@anim/slide_in_top"
+            app:exitAnim="@anim/slide_out_bottom"
+            app:popEnterAnim="@anim/slide_in_bottom"
+            app:popExitAnim="@anim/slide_out_top"/>
+        <action
+            android:id="@+id/action_mainFragment_to_fourthFragment"
+            app:destination="@id/navigation3"
+            app:enterAnim="@anim/slide_in_bottom"
+            app:exitAnim="@anim/slide_out_top"
+            app:popEnterAnim="@anim/slide_in_top"
+            app:popExitAnim="@anim/slide_out_bottom"/>
+    </fragment>
+    <fragment
+        android:id="@+id/thirdFragment"
+        android:name="mousquetaires.com.navigation4techday.ui.main.ThirdFragment"
+        android:label="ThirdFragment" >
+        <argument
+            android:name="origin" />
+        <action
+            android:id="@+id/action_thirdFragment_to_sixthFragment"
+            app:destination="@id/navigation5"
+            app:enterAnim="@anim/slide_in_right"
+            app:exitAnim="@anim/slide_out_left"
+            app:popEnterAnim="@anim/slide_in_left"
+            app:popExitAnim="@anim/slide_out_right"/>
+    </fragment>
+    <navigation
+        android:id="@+id/navigation3"
+        app:startDestination="@id/fourthFragment" >
+        <fragment
+            android:id="@+id/fourthFragment"
+            android:name="mousquetaires.com.navigation4techday.ui.main.FourthFragment"
+            android:label="FourthFragment">
+            <argument android:name="origin" />
+            <action
+                android:id="@+id/action_fourthFragment_to_fifthFragment"
+                app:destination="@id/fifthFragment"
+                app:enterAnim="@anim/slide_in_right"
+                app:exitAnim="@anim/slide_out_left"
+                app:popEnterAnim="@anim/slide_in_left"
+                app:popExitAnim="@anim/slide_out_right" />
+        </fragment>
+        <fragment
+            android:id="@+id/fifthFragment"
+            android:name="mousquetaires.com.navigation4techday.ui.main.FifthFragment"
+            android:label="FifthFragment">
+            <argument android:name="origin" />
+            <action
+                android:id="@+id/action_fifthFragment_to_sixthFragment"
+                app:destination="@id/navigation5"
+                app:enterAnim="@anim/slide_in_right"
+                app:exitAnim="@anim/slide_out_left"
+                app:popEnterAnim="@anim/slide_in_left"
+                app:popExitAnim="@anim/slide_out_right" />
+            <deepLink
+                android:id="@+id/deepLink3"
+                app:uri="http://navigation4techdaytest2/{origin}" />
+        </fragment>
+    </navigation>
+    <navigation
+        android:id="@+id/navigation5"
+        app:startDestination="@id/secondFragment" >
+        <fragment
+            android:id="@+id/secondFragment"
+            android:name="mousquetaires.com.navigation4techday.ui.main.SecondFragment"
+            android:label="SecondFragment">
+            <argument android:name="origin" />
+            <action
+                android:id="@+id/action_secondFragment_to_sixthFragment"
+                app:destination="@id/sixthFragment"
+                app:enterAnim="@anim/slide_in_right"
+                app:exitAnim="@anim/slide_out_left"
+                app:popEnterAnim="@anim/slide_in_left"
+                app:popExitAnim="@anim/slide_out_right" />
+        </fragment>
+        <fragment
+            android:id="@+id/sixthFragment"
+            android:name="mousquetaires.com.navigation4techday.ui.main.SixthFragment"
+            android:label="SixthFragment">
+            <argument android:name="origin" />
+            <action
+                android:id="@+id/action_sixthFragment_to_mainFragment"
+                app:destination="@id/mainFragment"
+                app:enterAnim="@anim/slide_in_right"
+                app:exitAnim="@anim/slide_out_left"
+                app:popEnterAnim="@anim/slide_in_left"
+                app:popExitAnim="@anim/slide_out_right" />
+            <deepLink
+                android:id="@+id/deepLink2"
+                app:uri="http://navigation4techdaytest/{origin}" />
+        </fragment>
+    </navigation>
+</navigation>
