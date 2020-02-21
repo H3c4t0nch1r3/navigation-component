@@ -42,9 +42,6 @@
             app:exitAnim="@anim/slide_out_left"
             app:popEnterAnim="@anim/slide_in_left"
             app:popExitAnim="@anim/slide_out_right"/>
-        <deepLink
-            android:id="@+id/deepLink"
-            app:uri="http://navigation4techday/2" />
     </fragment>
     <fragment
         android:id="@+id/thirdFragment"
@@ -104,7 +101,7 @@
                 app:popExitAnim="@anim/slide_out_right" />
             <deepLink
                 android:id="@+id/deepLink3"
-                app:uri="http://navigation4techdaytest2/{origin}" />
+                app:uri="http://navigation4techdayDeepLink/{origin}" />
         </fragment>
     </navigation>
 </navigation>
